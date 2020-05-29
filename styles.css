@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+    max-width: 1000px; /*to center website content*/
+    max-height: 1000px;
+    margin: auto; /*to center website content*/
+  /*margin: 0;*/
+  background-color: #cae8d5;
+}
+
+/*Organizing Grid*/
+.grid {
+  /*border: 2px solid #84a9ac;*/
+  height: 1000px;
+  /*width: 500px;*/
+  display: grid;
+  grid-template-rows: 3fr 1fr 4fr 4fr 4fr 2fr;
+  grid-template-columns: 2fr 7fr;
+  grid-gap: 10px 0px;
+  margin: 10px;
+}
+.box {
+  background-color: #84a9ac;
+  color: black;
+  border-radius: 5px;
+  border: 2px solid #84a9ac;
+  margin: 5px;
+}
+.header {
+  grid-area: 1 / 1 / span 1 / span 2;
+}
+.navbar {
+  grid-area: 2 / 1 / span 1 / span 2;
+}
+.sidebar {
+  grid-area: 3 / 1 / span 3 / span 1;
+}
+.main1 {
+  grid-area: 3 / 2 / span 1 / span 2;
+  background-color: inherit;
+  border: none;
+}
+.main2 {
+  grid-area: 4 / 2 / span 1 / span 2;
+  background-color: inherit;
+  border: none;
+}
+.main3 {
+  grid-area: 5 / 2 / span 1 / span 2;
+  background-color: inherit;
+  border: none;
+}
+.footer {
+  grid-area: 6 / 1 / span 1 / span 2;
+}
+/*Organizing Flex-box within Grid-main*/
+.flex {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.flexreverse {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100%;
+}
+.text {
+  border: 1px solid #84a9ac;
+  flex: 65%;
+  background-color: #84a9ac;
+  color: black;
+  border-radius: 5px;
+  margin-left: 10px;
+  text-align: right;
+  padding: 15px;
+}
+.img {
+  border: 1px solid #84a9ac;
+  flex: 35%;
+  color: black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.textreverse {
+  margin-right: 10px;
+  margin-left: 0px;
+  text-align: left;
+}
+.imgreverse {
+  justify-content: flex-end;
+}
+/*Organizing content*/
+/*Header*/
+.head {
+  position: relative;
+}
+.mainheading {
+  position: relative;
+  text-align: center;
+  top: 50px;
+
+}
+.logo {
+  position: relative;
+  left: 20px;
+  bottom: 20px;
+}
+/*Navigationbar*/
+.nav {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+.nav li {
+  padding: 10px;
+  margin-left: 30px;
+}
+.nav li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+}
+.nav li a:hover {
+  color: #353d52;
+}
+/*General*/
+.nobull {
+    list-style-type: none;
+}
+/*Sidebar*/
+.side {
+  margin: 20px;
+}
+.side h4 {
+  padding-bottom: 15px;
+}
+.side ul li {
+  padding: 10px;
+}
+.side ul li a {
+  text-decoration: none;
+  color: black;
+}
+.side ul li a:hover {
+  color: #353d52;
+}
+
+
+
+/*.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+.navbar {
+  background-color: #333;
+}
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+
+
+/*Column container
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.side {
+  flex: 20%;
+  background-color: #e6e6fa;
+  padding: 20px;
+}
+.main {
+  flex: 80%;
+  background-color: 	#8fbc8f;
+  padding: 20px;
+}
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+
+@media screen and (max-width: 700px) {
+  .row, navbar {
+    flex-direction: column;
+  }
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flexreverse {
+  display: flex;
+  flex-wrap: wrap;
+}
+.text {
+  flex: 80%;
+}
+.image {
+  flex: 20%;
+}
+/*.main {
+  display: flex;
+}
+.banner {
+  background-color: purple;
+  display: flex;
+  flex-direction: row-reverse;
+  /*justify-content: center;
+  margin: 20px 0px;
+}
+.mainheading {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin: auto;
+}
+.logo {
+  display: flex;
+  justify-content: flex-start;
+}
+.nav {
+  background-color: peachpuff;
+  position: relative; /*doesnt work yet (to make it stuck between relative and fixed)
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0px;
+}
+.nav li {
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+}
+
+.article {
+  background-color: palegreen;
+  padding: 10px;
+  position: relative;
+  margin: 10px 10px 10px 200px; /* Same as the width of the sidebar
+  max-width: 800px;
+  bottom: 180px;
+}
+.flex {
+  display: flex;
+  align-items: center; /*to position the images in the center vertically
+}
+.flexreverse {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: right;
+  align-items: center;
+}
+.text {
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+}
+.image {
+  background-color: white;
+}
+aside {
+  background-color: green;
+  width: 200px;
+  height: 100%;
+  position: relative;
+  /*z-index: 1;
+  top: 0;
+  left: 0;
+
+}*/
